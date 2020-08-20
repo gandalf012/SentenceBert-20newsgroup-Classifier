@@ -2,6 +2,8 @@
 
 API for sklearn 20 Newsgroups classifier with Faiss (Approximate Nearest Neighors library)
 
+## Introduction
+
 ## Install
 
 ```shell

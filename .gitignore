@@ -1,4 +1,6 @@
 models/fine-TripletLoss-20news-distilbert-base-nli-mean-tokens
+Paper/Triplet Loss and Online Triplet Mining in TensorFlow _ Olivier Moindrot blog_files
+Paper/Improving Approximate Nearest Neighbor Search.pdf
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
