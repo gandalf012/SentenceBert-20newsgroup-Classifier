@@ -1,11 +1,11 @@
 # SentenceTransformer based 20 News groups Classifer
 
-# API for 20 news_group classifier with Faiss (Approximate Nearest Neighors library)
+#1 API for 20 news_group classifier with Faiss (Approximate Nearest Neighors library)
 
 ## Install
-git@github.com:gandalf012/SentenceBert-20newsgroup-Classifier.git
+
 ```shell
-git clone git@bitbucket.org:iobotguys/ci-lurn.git
+git clone git@github.com:gandalf012/SentenceBert-20newsgroup-Classifier.git
 cd SentenceBert-20newsgroup-Classifier
 pip install -r requirements.txt
 ```
