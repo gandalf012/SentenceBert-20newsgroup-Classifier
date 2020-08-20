@@ -1,6 +1,6 @@
 # SentenceTransformer based 20 News groups Classifer
 
-#1 API for 20 news_group classifier with Faiss (Approximate Nearest Neighors library)
+## API for sklearn 20 Newsgroups classifier with Faiss (Approximate Nearest Neighors library)
 
 ## Install
 
