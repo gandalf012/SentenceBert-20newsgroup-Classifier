@@ -1,0 +1,11 @@
+models/fine-TripletLoss-20news-distilbert-base-nli-mean-tokens
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+
+# Environments
+venv/
+.vscode
+
+# Jupyter Notebook
+.ipynb_checkpoints
