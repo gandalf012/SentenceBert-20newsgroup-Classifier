@@ -7,7 +7,7 @@ API for sklearn 20 Newsgroups classifier with Faiss (Approximate Nearest Neighor
 
 ## Results
 
-
+![pipeline benchmark on test set for Faiss and pretrained Sbert](https://github.com/gandalf012/SentenceBert-20newsgroup-Classifier/blob/master/images/pipeline_bench.png)
 
 ## Full documentation
 
