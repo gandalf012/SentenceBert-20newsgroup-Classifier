@@ -50,7 +50,7 @@ To run model predictions on a question, you just need to do a GET request with t
 * Using [HTTPie](https://httpie.org/):
 
 ```shell
-http localhost:5000/api query=="It was a 2-door sports car, looked to be from the late 60s early 70s. It was called a Bricklin. The doors were really small."
+http localhost:5000/predict query=="It was a 2-door sports car, looked to be from the late 60s early 70s. It was called a Bricklin. The doors were really small."
 ```
 You should get a `json` as output
 ```json
