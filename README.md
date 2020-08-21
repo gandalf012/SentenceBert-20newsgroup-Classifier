@@ -30,6 +30,13 @@ The following are entry points for documentation:
 
 ## Improvement
 
+The following improvements can help to improve systems global performance:
+
+**Sentence-Bert embedding**:
+
+**Approximate Nearest-Neighbors library**:
+
+**Final Docker image**:
 
 
 ## Authors
