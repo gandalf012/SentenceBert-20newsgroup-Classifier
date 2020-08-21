@@ -1,1 +1,1 @@
-docker run -p 5000:5000 -d 20-news-classifier:latest python app.py
+docker run -p 5000:5000 20-news-classifier:latest python app.py
