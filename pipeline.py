@@ -109,7 +109,8 @@ model_names = ['fine-tune-sbert', 'pretrained-sbert']
 
 benchs = {}
 for model_path, model_name in zip(model_paths, model_names):
-    benchs[model_name] = benchmark(model_path, model_name, newstrainset, newstestset)
+    # benchs[model_name] = benchmark(model_path, model_name, newstrainset, newstestset)
+    benchmark(model_path, model_name, newstrainset, newstestset)
 
 
 # Faiss hyperparameters tuning to choose the right nprobe for indexing
