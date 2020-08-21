@@ -12,7 +12,7 @@ We choose facebook `Faiss-IVF`library for semantic search because of his:
 - low memory usage per index vector
 - fast index building time
 
-The final fine-tuned model is available on [Google Drive](https://drive.google.com/file/d/1VjYGZasx9sEuJ2u9DCirb8L2wdIYIcsM/view?usp=sharing)
+The final fine-tuned model is available on [Google Drive](https://drive.google.com/uc?export=download&id=1VjYGZasx9sEuJ2u9DCirb8L2wdIYIcsM)
 
 ## Results
 Our implementation achieved 60.45 of accuracy for 20 Newsgroup test set, while the pretrained model achieved 44.03 on the same test set.
@@ -33,11 +33,14 @@ The following are entry points for documentation:
 The following improvements can help to improve systems global performance:
 
 **Sentence-Bert embedding**:
+- Use Albert instead of distilbert to best encode corpus (Albert sentencepiece yield on better embedding than Bert Wordpiece)
+- Fine-tune on more labeled data to improve models accuracy and use BatchSemiHardTripletLoss function for better training
+- Use quantization (Onnx) to improve Albert Inference time
 
 **Approximate Nearest-Neighbors library**:
 
 **Final Docker image**:
-
+- Use numpy array instead of torch tensor, and extract tokenization module from transformer to build our own inference pipeline (embedding)
 
 ## Authors
 

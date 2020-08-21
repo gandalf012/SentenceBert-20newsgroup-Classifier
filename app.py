@@ -17,7 +17,7 @@ CORS(app)
 model_path = "models/fine-TripletLoss-20news-distilbert-base-nli-mean-tokens"
 model = SentenceTransformer(model_path)
 
-embedding_cache_path = 'output/20news_groups-embeddings.pkl'
+embedding_cache_path = 'output/20newsgroups-embeddings-fine-tune-sbert.pkl'
 embedding_size = 768
 
 top_k_hits = 10
