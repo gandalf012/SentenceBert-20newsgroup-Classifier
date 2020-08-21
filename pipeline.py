@@ -81,7 +81,7 @@ def benchmark(model_path: str, name: str, train_set, test_set, embedding_size: i
         if pred[0] == true_label[idx]:
             count += 1
     accuracy = count / len(true_label)
-    print("Approximate Nearest Neighbor precision on 20news group test with {} models: {:.2f}".format(name, accuracy * 100))
+    print("\nApproximate Nearest Neighbor precision on 20news group test with {} models: {:.2f}\n".format(name, accuracy * 100))
 
     return accuracy
 
@@ -109,7 +109,7 @@ model_names = ['fine-tune-sbert', 'pretrained-sbert']
 
 benchs = {}
 for model_path, model_name in zip(model_paths, model_names):
-    benchs[model_name] = benchmark(model_path, model_path, newstrainset, newstestset)
+    benchs[model_name] = benchmark(model_path, model_name, newstrainset, newstestset)
 
 
 # Faiss hyperparameters tuning to choose the right nprobe for indexing
