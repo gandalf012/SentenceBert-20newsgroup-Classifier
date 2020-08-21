@@ -9,7 +9,6 @@ API for sklearn 20 Newsgroups classifier with Faiss (Approximate Nearest Neighor
 ```shell
 git clone git@github.com:gandalf012/SentenceBert-20newsgroup-Classifier.git
 cd SentenceBert-20newsgroup-Classifier
-pip install -r requirements.txt
 ```
 ### Download Fune tuned **distilbert-base-nli-mean-tokens** 20 news group dataset
 From [Google Drive](https://drive.google.com/drive/folders/1iOgIA4WQOIl5Ao2NPN2swBGc9BiZLde4)
