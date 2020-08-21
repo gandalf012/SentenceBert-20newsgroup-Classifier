@@ -7,7 +7,7 @@ git clone git@github.com:gandalf012/SentenceBert-20newsgroup-Classifier.git
 cd SentenceBert-20newsgroup-Classifier
 ```
 ### Download Fune tuned **distilbert-base-nli-mean-tokens** 20 news group dataset
-From [Google Drive](https://drive.google.com/drive/folders/1iOgIA4WQOIl5Ao2NPN2swBGc9BiZLde4)
+From [Google Drive](https://drive.google.com/file/d/1VjYGZasx9sEuJ2u9DCirb8L2wdIYIcsM/view?usp=sharing)
 download **fine-TripletLoss-20newsdistilbert-base-nli-mean-tokens-2020-08-18_20-39-24** directory and unzip in models directory
 
 * Create venv

@@ -3,7 +3,7 @@
 API for sklearn 20 Newsgroups classifier with Faiss (Approximate Nearest Neighors library)
 
 ## Introduction
-This repository fine-tunes DistilBERT models on scikit-learn 20 News groups dataset with a triplet network structure to produce semantically meaningful sentence embeddings that can be used in supervised scenarios: Semantic textual similarity via Facebook Faiss (Approximate Nearest-Neighors library) and label predictions.
+This repository fine-tune DistilBERT models on scikit-learn 20 News groups dataset with a triplet network structure to produce semantically meaningful sentence embeddings that can be used in supervised scenarios: Semantic textual similarity via Facebook Faiss (Approximate Nearest-Neighors library) and label predictions.
 
 We fine-tune a pretrained `distilbert-base-nli-mean-tokens` with a TripletLoss function for 20 Newsgroups labels prediction.
 We choose facebook `Faiss-IVF`library for semantic search because of his:
@@ -11,6 +11,8 @@ We choose facebook `Faiss-IVF`library for semantic search because of his:
 - good accuracy
 - low memory usage per index vector
 - fast index building time
+
+The final fine-tuned model is available on [Google Drive](https://drive.google.com/file/d/1VjYGZasx9sEuJ2u9DCirb8L2wdIYIcsM/view?usp=sharing)
 
 ## Results
 Our implementation achieved 60.45 of accuracy for 20 Newsgroup test set, while the pretrained model achieved 44.03 on the same test set.
