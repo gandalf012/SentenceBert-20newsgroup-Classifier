@@ -1,4 +1,4 @@
-# 20 Newsgroups Classifier
+# 20 Newsgroups sentence-Bert classifier
 
 API for sklearn 20 Newsgroups classifier with Faiss (Approximate Nearest Neighors library)
 
