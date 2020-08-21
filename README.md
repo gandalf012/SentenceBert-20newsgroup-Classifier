@@ -33,9 +33,9 @@ The following are entry points for documentation:
 The following improvements can help to improve systems global performance:
 
 **Sentence-Bert embedding**:
-- Use Albert instead of distilbert to best encode corpus (Albert sentencepiece yield on better embedding than Bert Wordpiece)
-- Fine-tune on more labeled data to improve models accuracy and use BatchSemiHardTripletLoss function for better training
-- Use quantization (Onnx) to improve Albert Inference time
+- Use `Albert` instead of distilBert to best encode corpus (Albert `Sentencepiece` yield on better embedding than Bert `Wordpiece`)
+- Fine-tune on more labeled data to improve models accuracy and use `BatchSemiHardTripletLoss` function for better training
+- Use quantization with `Onnx` to improve Albert Inference time
 
 **Approximate Nearest-Neighbors library**:
 
