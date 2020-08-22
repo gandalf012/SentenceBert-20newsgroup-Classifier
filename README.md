@@ -1,8 +1,11 @@
 # 20 Newsgroups sentence-Bert classifier
 
 API for sklearn 20 Newsgroups classifier with Faiss (Approximate Nearest Neighors library)  
-Author: [Arnauld Adjovi](https://github.com/gandalf012)
+Author: [Arnauld Adjovi](https://github.com/gandalf012)  
 
+Demo:
+  - **REST API**: http://68.183.209.70:5000/predict?query= `MY SENTENCE`
+  - **WEB APP**: http://68.183.209.70:8501/
 
 ## Introduction
 This repository fine-tunes DistilBERT models on scikit-learn 20 News groups dataset with a triplet network structure to produce semantically meaningful sentence embeddings that can be used in supervised scenarios: Semantic textual similarity via Facebook Faiss (Approximate Nearest-Neighors library) and label predictions.
