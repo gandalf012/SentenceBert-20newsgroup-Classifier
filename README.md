@@ -35,6 +35,22 @@ The following are entry points for documentation:
 - all the systems is containerized into a docker image: [Dockerfile](https://github.com/gandalf012/SentenceBert-20newsgroup-Classifier/blob/master/Dockerfile)
 - [ANN-Benchmarks-A Benchmarking Tool for Approximate Nearest Neighbor Algorithms.pdf](https://github.com/gandalf012/SentenceBert-20newsgroup-Classifier/tree/master/Paper) paper help to pick an optimal Approximate Nearest-Neighbor algorithm. For [Link and code: Fair AI Similarity Search], see the [Faiss Repository](https://github.com/facebookresearch/faiss/wiki/Getting-started)
 
+## Using the REST API
+
+After starting the docker image, the api will be available on **localhost:5000/predict**.
+To run model predictions on a question, you just need to do a GET request with the sent in the `query`parameter.
+
+```shell
+https://localhost:5000/predict?query=It was a 2-door sports car, looked to be from the late 60s early 70s. It was called a Bricklin. The doors were really small.
+```
+You should get a `json` as output
+```json
+{
+  "label": "rec.autos",
+  "query": "It was a 2-door sports car, looked to be from the late 60s early 70s. It was called a Bricklin. The doors were really small."
+}
+```
+
 ## Improvements
 
 The following improvements can help achieve better performance:
