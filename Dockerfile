@@ -10,6 +10,7 @@ COPY --chown=worker:worker requirements.txt .
 RUN pip install -r requirements.txt
 
 COPY --chown=worker:worker app.py .
+COPY --chown=worker:worker interface.py .
 COPY --chown=worker:worker output/ output/
 COPY --chown=worker:worker models/ models/
 

@@ -1,51 +1,52 @@
 # 20 Newsgroups sentence-Bert classifier
 
 API for sklearn 20 Newsgroups classifier with Faiss (Approximate Nearest Neighors library)
+Author: [Arnauld Adjovi](https://github.com/gandalf012)
+
 
 ## Introduction
-This repository fine-tune DistilBERT models on scikit-learn 20 News groups dataset with a triplet network structure to produce semantically meaningful sentence embeddings that can be used in supervised scenarios: Semantic textual similarity via Facebook Faiss (Approximate Nearest-Neighors library) and label predictions.
+This repository fine-tunes DistilBERT models on scikit-learn 20 News groups dataset with a triplet network structure to produce semantically meaningful sentence embeddings that can be used in supervised scenarios: Semantic textual similarity via Facebook Faiss (Approximate Nearest-Neighors library) and label predictions.
 
-We fine-tune a pretrained `distilbert-base-nli-mean-tokens` with a TripletLoss function for 20 Newsgroups labels prediction.
-We choose facebook `Faiss-IVF`library for semantic search because of his:
+We fine-tuned a pretrained `distilbert-base-nli-mean-tokens` with a TripletLoss function for 20 Newsgroups labels prediction.
+We choosed facebook `Faiss-IVF`library for semantic search because of his avantages, mainly:
 - fast search time (good Recall-Queries per second)
 - good accuracy
-- low memory usage per index vector
-- fast index building time
+- low memory footprint per index vector
 
 The final fine-tuned model is available on [Google Drive](https://drive.google.com/uc?export=download&id=1VjYGZasx9sEuJ2u9DCirb8L2wdIYIcsM)
 
 ## Results
-Our implementation achieved 60.45 of accuracy for 20 Newsgroup test set, while the pretrained model achieved 44.03 on the same test set.
+
+- **pretrained model**: `44.03` accuracy on 20 Newsgroup test set 
+- **our fine-tuning**: `60.45` accuracy on 20 Newsgroup test set 
 
 ![pipeline benchmark on test set for Faiss and pretrained Sbert](https://github.com/gandalf012/SentenceBert-20newsgroup-Classifier/blob/master/images/pipeline_bench.png)
 
-## Full documentation
+## How it works !
+
+**Install tutorial** : [INSTALL](https://github.com/gandalf012/SentenceBert-20newsgroup-Classifier/blob/master/INSTALL.md)
 
 The following are entry points for documentation:
 
-- the [sbert_tuning.ipynb](https://github.com/gandalf012/SentenceBert-20newsgroup-Classifier/blob/master/sbert_tuning.ipynb) contains custom loading class `Fetch20newsLabelDataset`and training pipeline to fune-tuning distilbert models. It also help to benchmark the sBert model on dev and test with `TripletEvaluator`
-- [ANN-Benchmarks-A Benchmarking Tool for Approximate Nearest Neighbor Algorithms.pdf](https://github.com/gandalf012/SentenceBert-20newsgroup-Classifier/tree/master/Paper) paper help to pick an optimal Approximate Nearest-Neighbor algorithm. For [Link and code: Fair AI Similarity Search], see the [Faiss Repository](https://github.com/facebookresearch/faiss/wiki/Getting-started)
+- the [sbert_tuning.ipynb](https://github.com/gandalf012/SentenceBert-20newsgroup-Classifier/blob/master/sbert_tuning.ipynb) contains a custom loading class `Fetch20newsLabelDataset`and a training pipeline to fine-tune distilbert models. It also help to benchmark the sBert model on dev and test with `TripletEvaluator`
 - the [prediction pipeline](https://github.com/gandalf012/SentenceBert-20newsgroup-Classifier/blob/master/pipeline.py) contains a basic prediction code. To reproduce [benchmark results](https://github.com/gandalf012/SentenceBert-20newsgroup-Classifier/tree/master/images), please follow [INSTALL](https://github.com/gandalf012/SentenceBert-20newsgroup-Classifier/blob/master/INSTALL.md) and run `python pipeline.py`
-- the final [flask app](https://github.com/gandalf012/SentenceBert-20newsgroup-Classifier/blob/master/app.py) have been wrapped in a [Dockerfile](https://github.com/gandalf012/SentenceBert-20newsgroup-Classifier/blob/master/Dockerfile) and refers to [INSTALL](https://github.com/gandalf012/SentenceBert-20newsgroup-Classifier/blob/master/INSTALL.md) to predict.
+- the [app.py](https://github.com/gandalf012/SentenceBert-20newsgroup-Classifier/blob/master/app.py) is the flask app that expose the prediction pipeline through an api on port 5000. 
+- the [interface.py](https://github.com/gandalf012/SentenceBert-20newsgroup-Classifier/blob/master/interface.py) is a simple `web app` that leverage the previously created api to perform the classification task. It start by default on the port `8501``
+- all the systems is containerized into a docker image: [Dockerfile](https://github.com/gandalf012/SentenceBert-20newsgroup-Classifier/blob/master/Dockerfile)
+- [ANN-Benchmarks-A Benchmarking Tool for Approximate Nearest Neighbor Algorithms.pdf](https://github.com/gandalf012/SentenceBert-20newsgroup-Classifier/tree/master/Paper) paper help to pick an optimal Approximate Nearest-Neighbor algorithm. For [Link and code: Fair AI Similarity Search], see the [Faiss Repository](https://github.com/facebookresearch/faiss/wiki/Getting-started)
 
-## Improvement
+## Improvements
 
-The following improvements can help to improve systems global performance:
+The following improvements can help achieve better performance:
 
 **Sentence-Bert embedding**:
-- Use `Albert` instead of distilBert to best encode corpus (Albert `Sentencepiece` yield on better embedding than Bert `Wordpiece`)
+- Use `Albert` instead of distilBert to encode the corpus (Albert `Sentencepiece` yield on better embedding than Bert `Wordpiece`)
 - Fine-tune on more labeled data to improve models accuracy and use `BatchSemiHardTripletLoss` function for better training
-- Use quantization with `Onnx` to improve Albert Inference time
+- Leverage quantization and computational graph optimization with `OnnxRuntime` to improve Albert Inference time
 
 **Approximate Nearest-Neighbors library**:
-- Faiss-HNSW is the best option if you have a lots of RAM
+- Faiss-HNSW is the best option if you have a lot of RAM
 
-**Final Docker image**:
-- Use numpy array instead of torch tensor, and extract tokenization module from transformer to build our own inference pipeline (embedding). Ii will reduce the docker image final weigth.
-
-## Authors
-
-Built by [Arnauld Adjovi](https://github.com/gandalf012)
 
 ## Reference
 
