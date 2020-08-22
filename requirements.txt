@@ -27,6 +27,7 @@ mccabe==0.6.1
 nltk==3.5
 numpy==1.19.1
 packaging==20.4
+pandas
 parso==0.7.1
 pexpect==4.8.0
 pickleshare==0.7.5
@@ -45,6 +46,7 @@ scipy==1.5.2
 sentence-transformers==0.3.3
 sentencepiece==0.1.91
 six==1.15.0
+streamlit
 threadpoolctl==2.1.0
 tokenizers==0.8.1rc1
 toml==0.10.1

@@ -38,9 +38,10 @@ The following improvements can help to improve systems global performance:
 - Use quantization with `Onnx` to improve Albert Inference time
 
 **Approximate Nearest-Neighbors library**:
+Faiss-HNSW is the best option if you have a lots of RAM
 
 **Final Docker image**:
-- Use numpy array instead of torch tensor, and extract tokenization module from transformer to build our own inference pipeline (embedding)
+- Use numpy array instead of torch tensor, and extract tokenization module from transformer to build our own inference pipeline (embedding). Ii will reduce the docker image final weigth.
 
 ## Authors
 

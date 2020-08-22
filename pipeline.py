@@ -18,7 +18,6 @@ from sklearn.datasets import fetch_20newsgroups
 import os 
 import pickle
 import faiss
-import torch
 import numpy as np
 from tqdm import tqdm
 
