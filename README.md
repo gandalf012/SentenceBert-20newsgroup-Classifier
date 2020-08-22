@@ -1,6 +1,6 @@
 # 20 Newsgroups sentence-Bert classifier
 
-API for sklearn 20 Newsgroups classifier with Faiss (Approximate Nearest Neighors library)
+API for sklearn 20 Newsgroups classifier with Faiss (Approximate Nearest Neighors library)  
 Author: [Arnauld Adjovi](https://github.com/gandalf012)
 
 
@@ -22,23 +22,23 @@ The final fine-tuned model is available on [Google Drive](https://drive.google.c
 
 ![pipeline benchmark on test set for Faiss and pretrained Sbert](https://github.com/gandalf012/SentenceBert-20newsgroup-Classifier/blob/master/images/pipeline_bench.png)
 
-## How it works !
+## How it works
 
-**Install tutorial** : [INSTALL](https://github.com/gandalf012/SentenceBert-20newsgroup-Classifier/blob/master/INSTALL.md)
+**Installation tutorial** : [INSTALL](https://github.com/gandalf012/SentenceBert-20newsgroup-Classifier/blob/master/INSTALL.md)
 
-The following are entry points for documentation:
+The following file are the main components of the application:
 
 - the [sbert_tuning.ipynb](https://github.com/gandalf012/SentenceBert-20newsgroup-Classifier/blob/master/sbert_tuning.ipynb) contains a custom loading class `Fetch20newsLabelDataset`and a training pipeline to fine-tune distilbert models. It also help to benchmark the sBert model on dev and test with `TripletEvaluator`
-- the [prediction pipeline](https://github.com/gandalf012/SentenceBert-20newsgroup-Classifier/blob/master/pipeline.py) contains a basic prediction code. To reproduce [benchmark results](https://github.com/gandalf012/SentenceBert-20newsgroup-Classifier/tree/master/images), please follow [INSTALL](https://github.com/gandalf012/SentenceBert-20newsgroup-Classifier/blob/master/INSTALL.md) and run `python pipeline.py`
+- the [pipeline.py](https://github.com/gandalf012/SentenceBert-20newsgroup-Classifier/blob/master/pipeline.py) contains a basic prediction code. To reproduce [benchmark results](https://github.com/gandalf012/SentenceBert-20newsgroup-Classifier/tree/master/images), please follow [INSTALL](https://github.com/gandalf012/SentenceBert-20newsgroup-Classifier/blob/master/INSTALL.md) and run `python pipeline.py`
 - the [app.py](https://github.com/gandalf012/SentenceBert-20newsgroup-Classifier/blob/master/app.py) is the flask app that expose the prediction pipeline through an api on port 5000. 
 - the [interface.py](https://github.com/gandalf012/SentenceBert-20newsgroup-Classifier/blob/master/interface.py) is a simple `web app` that leverage the previously created api to perform the classification task. It start by default on the port `8501``
-- all the systems is containerized into a docker image: [Dockerfile](https://github.com/gandalf012/SentenceBert-20newsgroup-Classifier/blob/master/Dockerfile)
+- all these components are containerized into a docker image: [Dockerfile](https://github.com/gandalf012/SentenceBert-20newsgroup-Classifier/blob/master/Dockerfile)
 - [ANN-Benchmarks-A Benchmarking Tool for Approximate Nearest Neighbor Algorithms.pdf](https://github.com/gandalf012/SentenceBert-20newsgroup-Classifier/tree/master/Paper) paper help to pick an optimal Approximate Nearest-Neighbor algorithm. For [Link and code: Fair AI Similarity Search], see the [Faiss Repository](https://github.com/facebookresearch/faiss/wiki/Getting-started)
 
 ## Using the REST API
 
 After starting the docker image, the api will be available on **localhost:5000/predict**.
-To run model predictions on a question, you just need to do a GET request with the sent in the `query`parameter.
+To run model prediction on a sentence, you just need to do a GET request with the sentence in the `query` parameter.
 
 ```shell
 https://localhost:5000/predict?query=It was a 2-door sports car, looked to be from the late 60s early 70s. It was called a Bricklin. The doors were really small.
@@ -53,7 +53,7 @@ You should get a `json` as output
 
 ## Improvements
 
-The following improvements can help achieve better performance:
+The following improvements can help achieve a better performance:
 
 **Sentence-Bert embedding**:
 - Use `Albert` instead of distilBert to encode the corpus (Albert `Sentencepiece` yield on better embedding than Bert `Wordpiece`)

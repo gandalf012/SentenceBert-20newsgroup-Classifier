@@ -40,23 +40,6 @@ source venv/bin/activate
 export FLASK_APP=app.py
 flask run -h 0.0.0.0
 ```
-
-## Making requests to the REST API
-
-After starting the development server, it will be running on **localhost:5000/predict**.
-To run model predictions on a question, you just need to do a GET request with the question in the parameter _query_.
-
-```shell
-https://localhost:5000/predict?query=It was a 2-door sports car, looked to be from the late 60s early 70s. It was called a Bricklin. The doors were really small.
-```
-You should get a `json` as output
-```json
-{
-  "label": "rec.autos",
-  "query": "It was a 2-door sports car, looked to be from the late 60s early 70s. It was called a Bricklin. The doors were really small."
-}
-```
-
 ## Examples for demo
 
 1. It was a 2-door sports car, looked to be from the late 60s early 70s. It was called a Bricklin. The doors were really small. 
