@@ -27,6 +27,11 @@ pip install -r requirements.txt
 docker build -t "20-news-classifier" .
 ./rundocker
 ```
+### Web app
+```
+streamlit run interface.py
+```
+
 
 ## Run development server
 
